@@ -1,0 +1,10 @@
+.numberButtons button{
+    color : red;
+    font-weight: bold;
+}
+
+.operatorButtons button{
+    color: black;
+    background-color:grey;
+    font-weight: bolder;
+}
