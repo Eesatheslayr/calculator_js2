@@ -1,6 +1,6 @@
 let numOne = '';
 let numTwo = '';
-let operator = null;
+let operator = '';
 
 
 function addition(){
@@ -35,31 +35,35 @@ calculator.appendChild(operatorButtons);
 
 const operators = document.querySelectorAll('.operatorButtons button');
 
-const output = document.createElement('output');
-calculator.appendChild(output);
+const userChoiceOne = document.createElement('userChoiceOne');
+const userChoiceTwo = document.createElement('userChoiceTwo')
+
+calculator.appendChild(userChoiceOne);
+calculator.appendChild(userChoiceTwo);
 
 
-function userNumberOne(){
 numbers.forEach(button => {
     button.addEventListener('click', () => {
-      output.textContent = (` ${button.textContent}`);
+    console.log(` ${button.textContent}`);
     });
-})};
+});
 
-
-function userNumberTwo(){
-numbers.forEach(button => {
-     button.addEventListener('click', () => {
-        output.textContent = (` ${button.textContent}`);
-     });
-     })};   
-
-function userOperator(){
 operators.forEach(button => {
-    button.addEventListener('click' , () => {
-        console.log(` ${button.textContent} `);
+    button.addEventListener('click', () =>{
+        console.log(`${button.textContent}`);
     });
-})};
+});
 
-userNumberOne();
-1
+function calculate(numOne, numTwo, operator){
+    if ( operator === 'addition'){
+        return numOne + numTwo;
+    } else if (operator === 'subtraction'){
+        return numOne - numTwo;
+    } else if (operator === 'multiplication'){
+        return numOne * numTwo;
+    } else if (operator === 'division'){
+        return numOne / numTwo;
+    }
+};
+
+console.log(calculate(5, 2, 'addition'));
