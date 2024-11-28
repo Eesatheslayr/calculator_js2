@@ -67,3 +67,6 @@ function calculate(numOne, numTwo, operator){
 };
 
 console.log(calculate(5, 2, 'addition'));
+
+const display = document.querySelector('#display');
+display.textContent = '21'

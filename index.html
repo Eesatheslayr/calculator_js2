@@ -10,11 +10,8 @@
     </head>
     <body>
         <h1> My Calculator</h1>
-    <!--<div id = 'add'> </div>
-    <div id = 'subtract'> </div>
-    <div id = 'divide'> </div>
-    <div id = 'multiply'> </div> -->
-    <div class = 'calculator'>  
+    <div class = 'calculator'> 
+        <div id = 'display'> </div> 
         <div class = 'numberButtons'> 
             <button id = 'buttonOne'> 1 </button>
             <button id = 'buttonTwo'> 2 </button>
@@ -32,7 +29,10 @@
             <button id = 'buttonMulti'> X  </button>
             <button  id = 'buttonAdd'> + </button>
             <button id = 'buttonSubtract'> -  </button>
-            <button id = 'buttonEqual'> =  </button>
+            <div class = 'otherButtons'> 
+                <button id = 'buttonEqual'> =  </button>
+                <button id = 'clear'>  AC </button>
+            </div>
         </div>
     </div>    
         <script src="calc.js" async defer></script>
