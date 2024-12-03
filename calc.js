@@ -25,34 +25,39 @@ function division(){
 //console.log(division());
 
 const calculator = document.querySelector('.calculator');
+
+const display = document.querySelector('#display');
+calculator.appendChild(display);
+
+
 const numberButtons = document.querySelector('.numberButtons');
 calculator.appendChild(numberButtons);
 
+
 const numbers = document.querySelectorAll('.numberButtons button');
+
 
 const operatorButtons = document.querySelector('.operatorButtons');
 calculator.appendChild(operatorButtons);
 
 const operators = document.querySelectorAll('.operatorButtons button');
 
-const userChoiceOne = document.createElement('userChoiceOne');
-const userChoiceTwo = document.createElement('userChoiceTwo')
 
-calculator.appendChild(userChoiceOne);
-calculator.appendChild(userChoiceTwo);
-
+const otherButtons = document.querySelector('.otherButtons');
+calculator.appendChild(otherButtons);
 
 numbers.forEach(button => {
     button.addEventListener('click', () => {
-    console.log(` ${button.textContent}`);
+        display.textContent = `${button.textContent}`;
     });
 });
 
 operators.forEach(button => {
     button.addEventListener('click', () =>{
-        console.log(`${button.textContent}`);
+        display.textContent = `${button.textContent}`;
     });
 });
+
 
 function calculate(numOne, numTwo, operator){
     if ( operator === 'addition'){
@@ -66,7 +71,3 @@ function calculate(numOne, numTwo, operator){
     }
 };
 
-console.log(calculate(5, 2, 'addition'));
-
-const display = document.querySelector('#display');
-display.textContent = '21'

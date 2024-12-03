@@ -1,52 +1,18 @@
-/*.calculator{
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(44, 95, 95);
-    height: 300px;
-    width: 250px;
-}
-
-
-.numberButtons button{
-    color : rgb(173, 0, 0);
-    font-weight: bolder;
-    font-size: x-large;
-}
-
-.operatorButtons button{
-    color: rgb(15, 13, 13);
-    font-weight: bolder;
-    font-size: x-large;
-}
-
-#display{
-    display: block;
-    height: 50px;
-    background-color: rgb(85, 85, 85);
-    font-size: xx-large;
-    color: rgb(178, 97, 16);
-    font-weight: bolder
-}
-
-.otherButtons button{
-    color: rgb(101, 184, 0);
-    font-size: xx-large;
-}*/
-
 .calculator {
     display: flex;
     flex-direction: column;
     background-color: rgb(44, 95, 95);
-    height: 400px;
-    width: 250px;
-    padding: 10px;
+    height: 500px;
+    width: 300px;
+    padding: 15px;
     border-radius: 10px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    margin: 50px auto;
 }
 
 #display {
     display: block;
-    height: 50px;
+    height: 70px;
     background-color: rgb(85, 85, 85);
     font-size: xx-large;
     color: rgb(178, 97, 16);
@@ -55,6 +21,7 @@
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 5px;
+    word-break: break-all;
 }
 
 .numberButtons, .operatorButtons, .otherButtons {
@@ -71,24 +38,23 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: x-large;
+    transition: 0.2s;
 }
 
 .numberButtons button {
     color: rgb(173, 0, 0);
     font-weight: bolder;
-    font-size: x-large;
     background-color: rgb(255, 230, 230);
 }
 
 .operatorButtons button {
     color: rgb(15, 13, 13);
     font-weight: bolder;
-    font-size: x-large;
     background-color: rgb(200, 200, 200);
 }
 
 .otherButtons button {
     color: rgb(101, 184, 0);
-    font-size: xx-large;
     background-color: rgb(220, 255, 220);
 }
