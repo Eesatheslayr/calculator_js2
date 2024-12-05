@@ -2,25 +2,6 @@ let numOne = '';
 let numTwo = '';
 let operator = '';
 
-
-function addition(){
-   return  numOne + numTwo;
-}
-
-function subtraction(){
-    return numOne - numTwo;
-}
-
-function multiplication(){
-    return numOne * numTwo;
-}
-
-function division(){
-    return numOne / numTwo;
-}
-
-
-
 const calculator = document.querySelector('.calculator');
 
 const display = document.querySelector('#display');
@@ -43,7 +24,7 @@ const operators = document.querySelectorAll('.operatorButtons button');
 const otherButtons = document.querySelector('.otherButtons');
 calculator.appendChild(otherButtons);
 
-const ac = document.querySelectorAll('.otherButtons button');
+const ac = document.querySelector('#ac');
 
 const equals = document.querySelector('#equal');
 
@@ -77,9 +58,9 @@ equals.addEventListener('click', () => {
         result = num1 + num2;
     } else if (operator === '-') {
         result = num1 - num2;
-    } else if (operator === '*') {  
+    } else if (operator === 'X') {  
         result = num1 * num2;
-    } else if (operator === '/') {
+    } else if (operator === '÷') {
         result = num1 / num2;
     }
 
@@ -91,3 +72,9 @@ equals.addEventListener('click', () => {
     numTwo = '';
     operator = '';
 });
+
+ac.addEventListener('click', () => {
+    display.textContent = '';
+    numOne = '';
+    numTwo = '';
+})
