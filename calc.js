@@ -19,10 +19,7 @@ function division(){
     return numOne / numTwo;
 }
 
-//console.log(add());
-//console.log(subtract());
-//console.log(multiplication());
-//console.log(division());
+
 
 const calculator = document.querySelector('.calculator');
 
@@ -46,28 +43,51 @@ const operators = document.querySelectorAll('.operatorButtons button');
 const otherButtons = document.querySelector('.otherButtons');
 calculator.appendChild(otherButtons);
 
+const ac = document.querySelectorAll('.otherButtons button');
+
+const equals = document.querySelector('#equal');
+
+
 numbers.forEach(button => {
     button.addEventListener('click', () => {
-        display.textContent = `${button.textContent}`;
+        if (!operator) {
+            numOne += button.textContent;
+            display.textContent = numOne;
+        } 
+        else {
+            numTwo += button.textContent;
+            display.textContent = numTwo;
+        }
     });
 });
-
 operators.forEach(button => {
-    button.addEventListener('click', () =>{
-        display.textContent = `${button.textContent}`;
+    button.addEventListener('click', () => {
+        operator = button.textContent;
     });
 });
 
 
-function calculate(numOne, numTwo, operator){
-    if ( operator === 'addition'){
-        return numOne + numTwo;
-    } else if (operator === 'subtraction'){
-        return numOne - numTwo;
-    } else if (operator === 'multiplication'){
-        return numOne * numTwo;
-    } else if (operator === 'division'){
-        return numOne / numTwo;
-    }
-};
+equals.addEventListener('click', () => {
+    let num1 = parseFloat(numOne);
+    let num2 = parseFloat(numTwo);
+    let result;
 
+
+    if (operator === '+') {
+        result = num1 + num2;
+    } else if (operator === '-') {
+        result = num1 - num2;
+    } else if (operator === '*') {  
+        result = num1 * num2;
+    } else if (operator === '/') {
+        result = num1 / num2;
+    }
+
+   
+    display.textContent = result;
+
+   
+    numOne = result.toString();
+    numTwo = '';
+    operator = '';
+});
