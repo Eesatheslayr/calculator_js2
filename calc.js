@@ -21,6 +21,7 @@ calculator.appendChild(operatorButtons);
 const operators = document.querySelectorAll('.operatorButtons button');
 
 
+
 const otherButtons = document.querySelector('.otherButtons');
 calculator.appendChild(otherButtons);
 
