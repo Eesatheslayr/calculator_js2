@@ -62,9 +62,12 @@ equals.addEventListener('click', () => {
     } else if (operator === 'X') {  
         result = num1 * num2;
     } else if (operator === '÷') {
+        if (num2 === 0) {
+            display.textContent = 'Error';
+            return;
+        }
         result = num1 / num2;
     }
-
    
     display.textContent = result;
 
@@ -75,7 +78,7 @@ equals.addEventListener('click', () => {
 });
 
 ac.addEventListener('click', () => {
-    display.textContent = '';
+    display.textContent = '0';
     numOne = '';
     numTwo = '';
 })
